@@ -1,0 +1,112 @@
+<html>
+<body>
+    <h1>Two Digit by Two Digit Operations</h1>
+    <button id = "question" onclick="main1()" class = "mid">Generate New Problem</button>
+    <p id = "questionContainer" class = "mid"><p>
+    <textarea id = "user_ans" ></textarea>
+    <button id = "submit" onclick = "user_response()">Submit</button>
+    <button id = "back" onclick = "back()">Back</button>
+    <button id = "timerTitle" onclick = "startTimer()">Start Timer</button>
+    <p id = "timer"></p>
+    <p id = "counterTitle">Problems Solved: </p>
+    <p id = "counter"></p>
+</body>
+</html>
+<script>
+    var ctr = 0;
+    var interval;
+    correct_ctr = 0;
+    function timer(){
+        ctr ++;
+        if (ctr == 60){
+            clearInterval(interval);
+            document.querySelector("#counter").textContent = correct_ctr-temp;
+        }
+        document.querySelector("#timer").textContent = ctr;
+    }
+    function startTimer(){
+        clearInterval(interval);
+        ctr = 0;
+        temp = correct_ctr;
+        interval = setInterval(timer,1000);
+    }
+    
+    function generateRandom(min,max){
+        let low = min;
+        let high = max;
+        let rand = Math.floor(Math.random()*(max-min+1)+min);
+        return rand;
+    }
+    function randFunc(){
+        let rand1 = generateRandom(10,99);
+        let rand2 = generateRandom(10,99);
+        document.querySelector("#questionContainer").textContent= rand1 +" X " + rand2;
+        return [rand1,rand2];
+    }
+    function main1(){
+        document.querySelector("#user_ans").value = '';
+        let values = randFunc();
+        true_ans = values[0]*values[1];
+        
+
+            }
+    function user_response(){
+    if (document.querySelector("#user_ans").value == true_ans){
+        document.querySelector("#user_ans").value = "Correct!";
+        correct_ctr += 1;
+            }
+    else {document.querySelector("#user_ans").value = "Incorrect. The correct answer was: " + true_ans;}}
+    function back(){
+        window.location.href = "home.html";
+    }
+
+
+    
+    
+</script>
+<style>
+    h1 {
+        font-size:xxx-large;
+        text-align:center;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    }
+    #question {
+        border-radius: 5cm;
+        background-color: aqua;
+        width: 500px;
+        height: 100px;
+        font-size: xx-large;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        position:relative; top:100px;
+
+    }
+    #questionContainer {
+        font-size: xxx-large;
+        font-family:'Times New Roman', Times, serif;
+        text-align: center;
+        position:relative; top: 100px;
+        
+    }
+    #user_ans {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        position:relative; top:150px;
+        
+    }
+    #submit {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        position:relative; top:200px;
+    }
+    #back {
+        position:absolute; left:0px; top:0px;
+    }
+    
+        
+        
+    
+</style>
