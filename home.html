@@ -1,0 +1,117 @@
+<html>
+<body>
+    <img src = "images/background3.png" id = "home_background">
+    <h1 id = "title">Fast Math.</h1>
+    <p id = "signature">By Yulong Eric Lian</p>
+    <p id = "intro">Whether you're trying to study for your big quantitative finance interview, or just want to impress
+        your friends with your quick math ability, this tool can help you achieve your goals. It will
+        generate random numbers within the constraints that you select, and give you multiplication and addition practice. 
+    </p>
+    <div id = "buttons">
+        <button id = "onebyone" onclick="onebyone()" class = "button1">
+            One Digit Operations
+        </button>
+        <button id = "onebytwo" onclick="onebytwo()" class = "button1">
+            One and Two Digit Operations
+        </button>
+        <button id = "twobytwo" onclick="twobytwo()" class = "button1">
+            Two Digit Operations
+        </button>
+        <button id = "twobythree" onclick="twobythree()" class = "button1">
+            Two and Three Digit Operations
+        </button>
+        <button id = "threebythree" onclick="threebythree()" class = "button1">
+            Three Digit Operations
+        </button>
+    </div>
+</body>
+</html>
+<style>
+    #home_background {
+        margin:0;
+        padding:0;
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        object-fit:cover;
+    }
+    #title {
+        
+        font-size:xx-large;
+        
+        font-family:'Times New Roman', Times, serif;
+        color:#fff;
+        position:absolute;top:5%;right:43%;
+        text-transform:uppercase;
+    }
+    #signature {
+        font-size:x-small;
+        font-family:'Times New Roman', Times, serif;
+        position:absolute; left:0px; bottom:0px;
+        color:cornflowerblue;
+    }
+    .button1 {
+        background-color:#fff;
+        font-size:x-large;
+        width : 300px;
+        height: 100px;
+        text-transform:uppercase;
+        letter-spacing: 0.1em;
+        border: 4px solid #3498db;
+        cursor: pointer;
+        transition: 0.4s;
+        text-transform:capitalize;
+        
+    }
+    .button1:hover{
+        letter-spacing:0.25em;
+        border:#000;
+        transition:0.4s;
+    }
+
+    #onebyone {
+        position:absolute; right:54%; top:35%;
+    }
+    #onebytwo {
+        position:absolute; left:54%; top:35%;
+        
+    }
+
+    #twobytwo {
+        position:absolute; left:15%; top:65%;
+    }
+    #twobythree {
+        position:absolute; right:40%; top:65%;
+    }
+    #threebythree {
+        position:absolute; right:15%; top:65%;
+    }
+    #intro {font-size:medium;
+        
+        
+        text-align:center;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        position:absolute; top:17%;
+        color:#fff;
+    }
+</style>
+<script>
+    function onebyone(){
+        window.location.href = "1x1.html";
+    }
+    function onebytwo(){
+        window.location.href = "1x2.html";
+    }
+    function twobytwo(){
+        window.location.href = "2x2.html";
+    }
+    function twobythree(){
+        window.location.href = "2x3.html";
+    }
+    function threebythree(){
+        window.location.href = "3x3.html";
+    }
+
+</script>
